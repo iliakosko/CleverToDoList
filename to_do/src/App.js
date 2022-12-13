@@ -3,6 +3,7 @@ import './App.css';
 import Main from './components/Main';
 import Header from './components/Header';
 import AddNewToDo from './components/AddNewToDo'
+import Todos from './components/Todos';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </Header>
         <Main>
           <AddNewToDo />
+          <Todos/>
         </Main>
     </div>
   );
