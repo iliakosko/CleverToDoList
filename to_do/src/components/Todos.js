@@ -1,6 +1,6 @@
 import React from "react"
 
-import Todo from "../Todo"
+import Todo from "./Todo"
 
 function Todos(){
     const selectedProject = "Today"
@@ -10,13 +10,15 @@ function Todos(){
             id: '1',
             text: "TEst",
             date: "13/12/2021",
-            checked: false
+            checked: false,
+            color: '#000000'
         },
         {
             id: '2',
             text: "tEst",
             date: "13/12/2021",
-            checked: true
+            checked: true,
+            color: '#00ff00'
         }
     ]
 
