@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {CheckCircleFill, Circle} from 'react-bootstrap-icons'
+import {CheckCircleFill, Circle, Trash} from 'react-bootstrap-icons'
 
 function Todo({todo}){
     const [hover, setHover] = useState(false)
@@ -24,8 +24,16 @@ function Todo({todo}){
                     }                    
                 </div>
                 <div className="text">
-                    <p>{todo.text}</p>
+                    <p style={{color : todo.checked ? '#bebebe' : '#000000'}}>{todo.text}</p>
                     <div className={`line ${todo.checked ? 'line-through': ""}`}></div>
+                </div>
+                <div className="delete-todo">
+                    {
+                        (hover || todo.checked) &&
+                        <span>
+                            <Trash />
+                        </span>
+                    }
                 </div>
             </div>
         </div>
