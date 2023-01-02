@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import Todo from "./Todo"
 
+import { TodoContext } from "../context"
+
 function Todos(){
-    const selectedProject = "Today"
+    const {selectedProject} = useContext(TodoContext)
 
     const todos = [
         {
