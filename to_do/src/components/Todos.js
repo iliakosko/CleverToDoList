@@ -5,9 +5,9 @@ import Todo from "./Todo"
 import { TodoContext } from "../context"
 
 function Todos(){
-    const {selectedProject} = useContext(TodoContext)
+    const {todos, selectedProject} = useContext(TodoContext)
 
-    const todos = [
+    /*const todos = [
         {
             id: '1',
             text: "TEst",
@@ -22,7 +22,7 @@ function Todos(){
             checked: true,
             color: '#00ff00'
         }
-    ]
+    ]*/
 
     return(
         <div className="Todos">

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import firebase from "../firebase";
+import { useState, useEffect } from 'react'
+import firebase from '../firebase'
 
 export function useTodos(){
     const [todos, setTodos] = useState([])
@@ -11,12 +11,13 @@ export function useTodos(){
         .onSnapshot( snapshot => {
             const data = snapshot.docs.map( doc => {
                 return {
-                    id: doc.id,
+                    id : doc.id,
                     ...doc.data()
                 }
-            setTodos(data)
             })
+            setTodos(data)
         })
+
         return () => unsubscribe()
     })
 
