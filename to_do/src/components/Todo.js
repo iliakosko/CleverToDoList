@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {CheckCircleFill, Circle, Trash} from 'react-bootstrap-icons'
 
 import firebase from "firebase";
+import { TodoContext } from "../context";
 
 function Todo({todo}){
     const [hover, setHover] = useState(false)
+
+    const {selectedTodo, setSelectedTodo} = useContext(TodoContext)
+
+    const handleDelete = todo => {
+        deleteTodo(todo)
+
+        if(selectedTodo === todo){
+            setSelectedTodo(undefined)
+        }
+    }
 
     const deleteTodo = todo => {
         firebase
@@ -45,13 +56,16 @@ function Todo({todo}){
                     </span>
                     }                    
                 </div>
-                <div className="text">
+                <div 
+                    className="text"
+                    onClick={() => setSelectedTodo(todo)}
+                >
                     <p style={{color : todo.checked ? '#bebebe' : '#000000'}}>{todo.text}</p>
                     <div className={`line ${todo.checked ? 'line-through': ""}`}></div>
                 </div>
                 <div 
                     className="delete-todo"
-                    onClick={() => deleteTodo(todo)}>
+                    onClick={() => handleDelete(todo)}>
                     {
                         (hover || todo.checked) &&
                         <span>
