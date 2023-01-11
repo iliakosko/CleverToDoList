@@ -5,6 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Modal from "./Modal"
 import TodoForm from "./TodoForm";
 
+import firebase from '../firebase'
+import moment from 'moment'
 
 function AddNewToDo(){
 
@@ -15,7 +17,23 @@ function AddNewToDo(){
     const[date, setDate] = useState(new Date())
 
     function handleSubmit(e){
+        e.preventDefault()
 
+        if(text){
+            firebase
+                .firestore()
+                .collection('todos')
+                .add(
+                    {
+                        text: text,
+                        date: moment(date).format('MM/DD/YYYY'),
+                        checked: false
+                    }
+                )
+            setShowModal(false)
+            setText('')
+            setDate(new Date())
+        }
     }
 
     return (
