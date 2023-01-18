@@ -213,3 +213,53 @@
     padding-bottom: 2px;
     border-bottom: 1px solid #eeeeee;
   }
+
+  .Login {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+  }
+  
+  .Login input[type="text"],
+  .Login input[type="password"] {
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .Login input[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #01d28e;
+    border: 1px solid #01d28e;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .Login input[type="submit"]:hover {
+    background: #6cf0c2;
+  }
+  
+  .Login .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  .Login .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .Login .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }

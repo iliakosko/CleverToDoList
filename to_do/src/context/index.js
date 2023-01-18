@@ -10,12 +10,20 @@ function TodoContextProvider({ children }) {
   const today = moment(new Date()).format("MM/DD/YYYY");
   const [selectedProject, setSelectedProject] = useState(today);
   const [selectedTodo, setSelectedTodo] = useState(undefined);
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const todos = useTodos();
   return (
     <TodoContext.Provider
       value={{
         selectedProject,
         setSelectedProject,
+
+        errorMessages,
+        setErrorMessages,
+
+        isSubmitted,
+        setIsSubmitted,
 
         todos,
         selectedTodo,
