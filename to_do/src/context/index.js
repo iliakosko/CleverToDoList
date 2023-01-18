@@ -1,10 +1,13 @@
 import React, {createContext, useState} from "react";
 import { useTodos } from "../hooks";
+
+import moment from 'moment'
+
 const TodoContext = createContext()
 
 function TodoContextProvider({children}){
-    const defaultProject = 'today'
-    const [selectedProject, setSelectedProject] = useState(defaultProject)
+    const today = moment(new Date()).format('MM/DD/YYYY')
+    const [selectedProject, setSelectedProject] = useState(today)
     const [selectedTodo, setSelectedTodo] = useState(undefined)
     const todos = useTodos()
     return (

@@ -7,23 +7,6 @@ import { TodoContext } from "../context"
 function Todos(){
     const {todos, selectedProject} = useContext(TodoContext)
 
-    /*const todos = [
-        {
-            id: '1',
-            text: "TEst",
-            date: "13/12/2021",
-            checked: false,
-            color: '#000000'
-        },
-        {
-            id: '2',
-            text: "tEst",
-            date: "13/12/2021",
-            checked: true,
-            color: '#00ff00'
-        }
-    ]*/
-
     return(
         <div className="Todos">
             <div className="selected-project">
@@ -31,7 +14,7 @@ function Todos(){
             </div>
             <div className="todos">
                 { 
-                    todos.map(todo =>
+                    todos.filter(todo=> todo.date===selectedProject).map(todo =>
                         <Todo todo={todo} key={todo.id} />
                     )
                 }

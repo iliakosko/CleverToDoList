@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.Calendar{
+  width: 43vw;
+}
+
 /*Modal*/
 .Modal {
   position: fixed;
@@ -14,8 +18,8 @@
 
 .Modal .container{
   position: absolute;
-  top: 25%;
-  left:50%;
+  top: 40%;
+  left:55%;
   transform: translate(-50%, -25%);
 
 }
@@ -40,6 +44,7 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 30px
 }
 
 .AddNewToDo .btn button:hover{
@@ -126,11 +131,11 @@
   /*Todos*/
   .Todos {
     width: 400px;
-    height: 70%;
+    height: 60%;
     background-color: blue;
 
     position:absolute;
-    top: 180px;
+    top: 240px;
     left: 40px;
 
     border-radius: 4px;
@@ -192,7 +197,7 @@
 
     background-color: white;
 
-    height: 80%;
+    height: 65%;
     width: 450px;
 
     border-radius: 4px;
