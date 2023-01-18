@@ -1,11 +1,8 @@
 import React from "react";
 
-function Header({children}){
-    return(
-        <div className="Header">
-            {children}
-        </div>    
-    )
+// eslint-disable-next-line react/prop-types
+function Header({ children }) {
+  return <div className="Header">{children}</div>;
 }
 
-export default Header
+export default Header;
